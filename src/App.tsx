@@ -16,6 +16,7 @@ import CreateQuoteAIPage from "./pages/CreateQuoteAIPage";
 import CreateQuoteManualPage from "./pages/CreateQuoteManualPage";
 import ClientsPage from "./pages/ClientsPage";
 import LibraryPage from "./pages/LibraryPage";
+import { QuoteProvider } from "./contexts/QuoteContext";
 
 const queryClient = new QueryClient();
 
@@ -24,22 +25,24 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/landing" element={<LandingPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/quotes" element={<QuotesPage />} />
-          <Route path="/create-quote" element={<CreateQuotePage />} />
-          <Route path="/create-quote/ai" element={<CreateQuoteAIPage />} />
-          <Route path="/create-quote/manual" element={<CreateQuoteManualPage />} />
-          <Route path="/clients" element={<ClientsPage />} />
-          <Route path="/library" element={<LibraryPage />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <QuoteProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/landing" element={<LandingPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/quotes" element={<QuotesPage />} />
+            <Route path="/create-quote" element={<CreateQuotePage />} />
+            <Route path="/create-quote/ai" element={<CreateQuoteAIPage />} />
+            <Route path="/create-quote/manual" element={<CreateQuoteManualPage />} />
+            <Route path="/clients" element={<ClientsPage />} />
+            <Route path="/library" element={<LibraryPage />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </QuoteProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );
