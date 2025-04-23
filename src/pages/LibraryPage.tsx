@@ -1,8 +1,7 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../components/layout/Layout';
-import { Search, Plus, Tag, Box, Grid, Tool } from 'lucide-react';
+import { Search, Plus, Tag, Box, Grid, Wrench } from 'lucide-react';
 
 interface LibraryItem {
   id: string;
@@ -18,7 +17,6 @@ const LibraryPage = () => {
   const [activeTab, setActiveTab] = useState<'materials' | 'labor' | 'packages'>('materials');
   const [search, setSearch] = useState('');
   
-  // Mock data for demo purposes
   const allItems: LibraryItem[] = [
     {
       id: '1',
@@ -65,14 +63,11 @@ const LibraryPage = () => {
     }
   ];
   
-  // Filter items based on active tab and search
   const getFilteredItems = () => {
     let filtered = allItems;
     
-    // Filter by type
     filtered = filtered.filter(item => item.type === activeTab);
     
-    // Filter by search
     if (search) {
       const searchTerm = search.toLowerCase();
       filtered = filtered.filter(
@@ -85,7 +80,6 @@ const LibraryPage = () => {
     return filtered;
   };
   
-  // Get favorite items
   const favoriteItems = allItems.filter(item => item.isFavorite);
   
   const formatPrice = (price: number) => {
@@ -104,7 +98,6 @@ const LibraryPage = () => {
         </Link>
       </div>
       
-      {/* Search */}
       <div className="relative mb-4">
         <Search size={18} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
         <input
@@ -116,7 +109,6 @@ const LibraryPage = () => {
         />
       </div>
       
-      {/* Tabs */}
       <div className="flex border-b border-gray-300 mb-4">
         <button
           onClick={() => setActiveTab('materials')}
@@ -137,7 +129,7 @@ const LibraryPage = () => {
               : 'text-gray-500'
           }`}
         >
-          <Tool size={18} className="mr-1" />
+          <Wrench size={18} className="mr-1" />
           Main d'œuvre
         </button>
         <button
@@ -153,7 +145,6 @@ const LibraryPage = () => {
         </button>
       </div>
       
-      {/* Favorites Section */}
       {favoriteItems.length > 0 && !search && (
         <div className="mb-6">
           <h3 className="font-medium text-gray-700 mb-3">Favoris</h3>
@@ -176,7 +167,6 @@ const LibraryPage = () => {
         </div>
       )}
       
-      {/* Items List */}
       <div>
         {activeTab === 'materials' && <h3 className="font-medium text-gray-700 mb-3">Matériaux</h3>}
         {activeTab === 'labor' && <h3 className="font-medium text-gray-700 mb-3">Main d'œuvre</h3>}
