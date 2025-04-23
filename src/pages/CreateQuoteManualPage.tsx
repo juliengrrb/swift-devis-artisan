@@ -1,17 +1,9 @@
 
 import React from 'react';
-import Layout from '../components/layout/Layout';
-import QuoteFormNew from '../components/quotes/QuoteFormNew';
+import QuoteEditor from '../components/quotes/QuoteEditor';
 
 const CreateQuoteManualPage = () => {
-  return (
-    <Layout 
-      title="Création de devis" 
-      showBackButton={true}
-    >
-      <QuoteFormNew />
-    </Layout>
-  );
+  return <QuoteEditor />;
 };
 
 export default CreateQuoteManualPage;
