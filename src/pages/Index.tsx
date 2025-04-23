@@ -1,20 +1,17 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import LandingPage from './LandingPage';
+import { useEffect } from 'react';
 
 const Index: React.FC = () => {
   const navigate = useNavigate();
-  const isLoggedIn = false; // This would be replaced with actual authentication check
 
   useEffect(() => {
-    // If logged in, redirect to dashboard
-    if (isLoggedIn) {
-      navigate('/dashboard');
-    }
-  }, [isLoggedIn, navigate]);
+    // Redirect to dashboard immediately without auth check
+    navigate('/dashboard');
+  }, [navigate]);
 
-  return <LandingPage />;
+  return null;
 };
 
 export default Index;

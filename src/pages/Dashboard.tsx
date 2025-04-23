@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { FileText, CheckCircle, Clock, AlertTriangle } from 'lucide-react';
+import { FileText, CheckCircle, Clock } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import StatCard from '../components/dashboard/StatCard';
 import Chart from '../components/dashboard/Chart';
@@ -38,29 +37,29 @@ const Dashboard = () => {
   const activities = [
     {
       id: '1',
-      type: 'quote',
+      type: 'quote' as const,
       number: 'DEV-2025-001',
       client: 'Martin Dupont',
       amount: 1250,
-      status: 'pending',
+      status: 'pending' as const,
       date: '2025-04-20'
     },
     {
       id: '2',
-      type: 'invoice',
+      type: 'invoice' as const,
       number: 'FAC-2025-001',
       client: 'Sophie Laurent',
       amount: 780.5,
-      status: 'paid',
+      status: 'paid' as const,
       date: '2025-04-18'
     },
     {
       id: '3',
-      type: 'quote',
+      type: 'quote' as const,
       number: 'DEV-2025-002',
       client: 'Jean Lefebvre',
       amount: 3450,
-      status: 'signed',
+      status: 'signed' as const,
       date: '2025-04-15'
     }
   ];

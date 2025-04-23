@@ -1,11 +1,9 @@
-
 import React, { useState } from 'react';
 import Layout from '../components/layout/Layout';
 import QuoteFilter from '../components/quotes/QuoteFilter';
 import QuotesList from '../components/quotes/QuotesList';
 
 const QuotesPage = () => {
-  // Mock data for demo purposes
   const allQuotes = [
     {
       id: '1',
@@ -14,7 +12,7 @@ const QuotesPage = () => {
       title: 'Rénovation salle de bain',
       date: '2025-04-20',
       amount: 1250,
-      status: 'pending'
+      status: 'pending' as const
     },
     {
       id: '2',
@@ -23,7 +21,7 @@ const QuotesPage = () => {
       title: 'Installation électrique complète',
       date: '2025-04-15',
       amount: 3450,
-      status: 'signed'
+      status: 'signed' as const
     },
     {
       id: '3',
@@ -32,7 +30,7 @@ const QuotesPage = () => {
       title: 'Pose de carrelage cuisine',
       date: '2025-04-10',
       amount: 980,
-      status: 'draft'
+      status: 'draft' as const
     },
     {
       id: '4',
@@ -41,7 +39,7 @@ const QuotesPage = () => {
       title: 'Peinture appartement',
       date: '2025-04-05',
       amount: 2200,
-      status: 'converted'
+      status: 'converted' as const
     }
   ];
   
