@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 // Types
@@ -109,7 +108,7 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         },
         {
           id: '2',
-          description: 'Main d'œuvre pose carrelage',
+          description: "Main d'œuvre pose carrelage",
           quantity: 1,
           unit: 'm²',
           unitPrice: 35.00,
@@ -125,7 +124,7 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         },
         {
           id: '4',
-          description: 'Installation douche à l\'italienne',
+          description: "Installation douche à l'italienne",
           quantity: 1,
           unit: 'u',
           unitPrice: 850.00,
