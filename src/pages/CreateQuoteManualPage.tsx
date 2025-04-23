@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Layout from '../components/layout/Layout';
-import QuoteForm from '../components/quotes/QuoteForm';
+import QuoteFormNew from '../components/quotes/QuoteFormNew';
 
 const CreateQuoteManualPage = () => {
   return (
@@ -9,7 +9,7 @@ const CreateQuoteManualPage = () => {
       title="Création de devis" 
       showBackButton={true}
     >
-      <QuoteForm />
+      <QuoteFormNew />
     </Layout>
   );
 };
