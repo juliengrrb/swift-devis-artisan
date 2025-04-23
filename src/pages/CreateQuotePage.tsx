@@ -2,7 +2,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Layout from '../components/layout/Layout';
-import AIQuotePrompt from '../components/quotes/AIQuotePrompt';
 import { FileText, Bot } from 'lucide-react';
 
 const CreateQuotePage = () => {

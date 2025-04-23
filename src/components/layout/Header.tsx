@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({
   };
   
   // Hide back button on main dashboard
-  const shouldShowBackButton = showBackButton && location.pathname !== '/';
+  const shouldShowBackButton = showBackButton && location.pathname !== '/dashboard';
 
   return (
     <header className="sticky top-0 z-10 bg-white border-b border-gray-200 shadow-sm py-4 px-4">

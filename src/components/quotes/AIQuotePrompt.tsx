@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Bot, ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const AIQuotePrompt: React.FC = () => {
   const [prompt, setPrompt] = useState<string>('');
@@ -28,7 +29,7 @@ const AIQuotePrompt: React.FC = () => {
         <div className="bg-white rounded-lg border border-gray-300 p-4">
           <div className="flex items-center mb-3">
             <Bot size={20} className="text-primary mr-2" />
-            <h3 className="font-medium">Assistant IA</h3>
+            <h3 className="font-semibold">Assistant IA</h3>
           </div>
           
           <p className="text-sm text-gray-600 mb-4">
@@ -45,13 +46,13 @@ const AIQuotePrompt: React.FC = () => {
           />
           
           <div className="mt-4">
-            <button
+            <Button
               type="submit"
               disabled={!prompt.trim() || isGenerating}
-              className={`w-full py-3 rounded-md text-white font-medium flex items-center justify-center transition ${
+              className={`w-full py-6 rounded-md text-white font-medium flex items-center justify-center ${
                 !prompt.trim() || isGenerating
                   ? 'bg-gray-400 cursor-not-allowed'
-                  : 'bg-primary hover:bg-primary-600'
+                  : 'bg-accent hover:bg-accent-600'
               }`}
             >
               {isGenerating ? (
@@ -65,7 +66,7 @@ const AIQuotePrompt: React.FC = () => {
                   <ArrowRight className="ml-2" size={18} />
                 </>
               )}
-            </button>
+            </Button>
           </div>
           
           <p className="text-xs text-center text-gray-500 mt-3">

@@ -1,9 +1,11 @@
+
 import React from 'react';
 import { FileText, CheckCircle, Clock } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import StatCard from '../components/dashboard/StatCard';
 import Chart from '../components/dashboard/Chart';
 import RecentActivity from '../components/dashboard/RecentActivity';
+import { Button } from "../components/ui/button";
 
 const Dashboard = () => {
   // Mock data for demo purposes
@@ -66,20 +68,31 @@ const Dashboard = () => {
 
   return (
     <Layout title="Tableau de bord">
-      <div className="grid grid-cols-3 gap-4">
-        {stats.map((stat, index) => (
-          <StatCard
-            key={index}
-            title={stat.title}
-            value={stat.value}
-            icon={stat.icon}
-          />
-        ))}
+      <div className="space-y-6">
+        <div className="grid grid-cols-3 gap-4">
+          {stats.map((stat, index) => (
+            <StatCard
+              key={index}
+              title={stat.title}
+              value={stat.value}
+              icon={stat.icon}
+            />
+          ))}
+        </div>
+        
+        <Chart data={chartData} />
+        
+        <RecentActivity activities={activities} />
+        
+        <div className="text-center mt-8">
+          <Button 
+            variant="outline" 
+            className="border-primary text-primary hover:bg-primary hover:text-white"
+          >
+            Voir plus d'activités
+          </Button>
+        </div>
       </div>
-      
-      <Chart data={chartData} />
-      
-      <RecentActivity activities={activities} />
     </Layout>
   );
 };

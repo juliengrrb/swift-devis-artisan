@@ -19,7 +19,7 @@ const Layout: React.FC<LayoutProps> = ({
   hideNavbar = false
 }) => {
   return (
-    <div className="min-h-screen bg-secondary pb-16">
+    <div className="min-h-screen bg-gray-50 pb-16">
       <Header 
         title={title} 
         showBackButton={showBackButton} 

@@ -19,8 +19,8 @@ const MobileNavbar = () => {
   return (
     <div className="fixed bottom-0 left-0 right-0 h-16 bg-white border-t border-gray-200 flex items-center justify-around z-50">
       <Link 
-        to="/" 
-        className={`flex flex-col items-center justify-center w-full h-full ${isActive('/') ? 'text-primary' : 'text-gray-500'}`}
+        to="/dashboard" 
+        className={`flex flex-col items-center justify-center w-full h-full ${isActive('/dashboard') ? 'text-primary' : 'text-gray-500'}`}
       >
         <LayoutDashboard size={24} />
         <span className="text-xs mt-1">Tableau</span>
